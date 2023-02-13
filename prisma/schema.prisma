@@ -22,9 +22,10 @@ model Product {
   id          String   @id @default(uuid())
   createdAt   DateTime @default(now())
   name        String   @db.VarChar(255)
-  belongsToId String
+  belongsToId String   
   belongsTo   User     @relation(fields: [belongsToId], references: [id])
   updates     Update[]
+  @@unique([id, belongsToId])
 }
 
 enum UPDATE_STATUS {
