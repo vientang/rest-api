@@ -10,7 +10,7 @@ const router = new Router()
 /**
  * Products
  */
-router.get('/product', getProducts)
+router.get('/products', getProducts)
 router.get('/product/:id', getProduct)
 router.post('/product', body('name').isString(), handleInputErrors, createProduct)
 router.put('/product/:id', body('name').isString(), handleInputErrors, updateProduct)
@@ -19,7 +19,7 @@ router.delete('/product/:id', deleteProduct)
 /**
  * Updates
  */
-router.get('/update', getUpdates)
+router.get('/updates', getUpdates)
 router.get('/update/:id', getUpdate)
 router.post('/update', 
     body('title').exists().isString(), 
@@ -39,7 +39,7 @@ router.delete('/update/:id', deleteUpdate)
 /**
  * Update points
  */
-router.get('/update-point', getUpdatePoints)
+router.get('/update-points', getUpdatePoints)
 router.get('/update-point/:id', getUpdatePoint)
 // router.post('/update-point',
 //     body('name').toString(), 
